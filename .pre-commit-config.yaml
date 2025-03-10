@@ -1,0 +1,10 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: generate-readme-index
+        name: Generate README Index
+        entry: python .hooks/generate_index.py  # adjust path if needed
+        language: python
+        files: README\.md$
+        pass_filenames: false
+        additional_dependencies: []
