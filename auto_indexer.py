@@ -57,8 +57,9 @@ def generate_index_table(headers: List[Tuple[Dict[str, str], str]]) -> str:
 
     # Add rows
     for header, file_path in sorted(headers, key=lambda x: x[0].get('title', '').lower()):
-        relative_path = os.path.relpath(file_path, '.')
-        path_cell = f"[{os.path.dirname(relative_path)}]({relative_path})"
+        parent_dir = os.path.dirname(file_path)
+        relative_path = os.path.relpath(parent_dir, '.')
+        path_cell = f"[{relative_path}]({relative_path})"
         
         # Get values for each column, using empty string if not found
         title = header.get('title', '')
