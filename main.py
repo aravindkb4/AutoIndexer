@@ -71,8 +71,8 @@ def generate_index_table(headers: List[Tuple[Dict[str, str], str]]) -> str:
     return table
 
 def update_main_readme(index_content: str):
-    """Update main README.md with the index table"""
-    readme_path = 'README.md'
+    """Update main index.md with the index table"""
+    readme_path = 'index.md'
     index_marker_start = "<!-- AUTO-GENERATED-INDEX-START -->"
     index_marker_end = "<!-- AUTO-GENERATED-INDEX-END -->"
 
@@ -102,7 +102,7 @@ def update_main_readme(index_content: str):
             f.write(new_content)
 
     except Exception as e:
-        print(f"Error updating main README.md: {str(e)}")
+        print(f"Error updating main index.md: {str(e)}")
         exit(1)
 
 def main():
